@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace Consultorio
 {
     public partial class Form1 : Form
@@ -8,6 +10,7 @@ namespace Consultorio
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void btnAcceder_Click(object sender, EventArgs e)
@@ -26,9 +29,12 @@ namespace Consultorio
                 MessageBox.Show("Contraseña incorrecta. Inténtalo de nuevo.");
             }
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
+  
 
-        }
+       
+
+
+       
     }
-}
+    }
+

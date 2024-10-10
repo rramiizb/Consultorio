@@ -52,6 +52,8 @@ namespace Consultorio
 
 
         public void ConnectToDatabase()
+
+
         {
             string connectionString = "Server=127.0.0.1; Port=3306;Database=Pacientes;User Id=root;Password=45891023;";
 
@@ -79,12 +81,8 @@ namespace Consultorio
 
         private void CargarDatos()
         {
-
-
-
-
-            // Consulta SQL para obtener los datos de la tabla
-            string query = "SELECT * FROM Turnos"; // Cambia "tu_tabla" por el nombre real de tu tabla
+            // Consulta SQL para obtener los datos de la tabla, excluyendo 'idPaciente'
+            string query = "SELECT idPaciente, Nombre, Apellido, DNI, Telefono, `Obra Social`, `Motivo Consulta`, Fecha, Hora FROM Turnos";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -101,21 +99,26 @@ namespace Consultorio
                     // Asignar el DataTable como fuente de datos del DataGridView
                     dataGridView1.DataSource = dataTable;
 
-                    // Esperar hasta que los datos estén completamente cargados
-
-                    Application.DoEvents();  // Procesar cualquier evento pendiente
+                    // Procesar eventos pendientes
+                    Application.DoEvents();
 
                     // Desactivar selección automática
                     dataGridView1.ClearSelection();
 
-                    isLoading = false; //Terminar el estado de carga 
-
-
+                    isLoading = false; // Terminar el estado de carga
                 }
                 catch (MySqlException ex)
                 {
                     MessageBox.Show($"Error al cargar los datos: {ex.Message}");
                 }
+
+                // Ocultar la columna 'idPaciente'
+                if (dataGridView1.Columns.Contains("idPaciente"))
+                {
+                    dataGridView1.Columns["idPaciente"].Visible = false;
+                }
+
+
             }
         }
 
@@ -252,50 +255,50 @@ namespace Consultorio
 
 
         private void btnModificar_Click(object? sender, EventArgs e)
+        {
+            // Consulta SQL para modificar los datos
+            string query = "UPDATE Turnos SET Nombre=@Nombre, Apellido=@Apellido, DNI=@Dni, Telefono=@Telefono, " +
+                           "`Obra Social`=@ObraSocial, `Motivo Consulta`=@MotivoConsulta, Fecha=@Fecha, Hora=@Hora " +
+                           "WHERE idPaciente=@idPaciente";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                // Consulta SQL para modificar los datos
-                string query = "UPDATE Turnos SET Nombre=@Nombre, Apellido=@Apellido, DNI=@Dni, Telefono=@Telefono, " +
-                               "`Obra Social`=@ObraSocial, `Motivo Consulta`=@MotivoConsulta, Fecha=@Fecha, Hora=@Hora " +
-                               "WHERE idPaciente=@idPaciente";
-
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    // Usar parámetros para evitar inyección de SQL
+                    command.Parameters.AddWithValue("@Nombre", txtNombre.Text);
+                    command.Parameters.AddWithValue("@Apellido", txtApellido.Text);
+                    command.Parameters.AddWithValue("@Dni", txtDNI.Text);
+                    command.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
+                    command.Parameters.AddWithValue("@ObraSocial", txtObraSocial.Text);
+                    command.Parameters.AddWithValue("@MotivoConsulta", txtMotivo.Text);
+                    command.Parameters.AddWithValue("@Fecha", txtFecha.Text);
+                    command.Parameters.AddWithValue("@Hora", txtHora.Text);
+                    command.Parameters.AddWithValue("@idPaciente", idPaciente);
+
+                    try
                     {
-                        // Usar parámetros para evitar inyección de SQL
-                        command.Parameters.AddWithValue("@Nombre", txtNombre.Text);
-                        command.Parameters.AddWithValue("@Apellido", txtApellido.Text);
-                        command.Parameters.AddWithValue("@Dni", txtDNI.Text);
-                        command.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
-                        command.Parameters.AddWithValue("@ObraSocial", txtObraSocial.Text);
-                        command.Parameters.AddWithValue("@MotivoConsulta", txtMotivo.Text);
-                        command.Parameters.AddWithValue("@Fecha", txtFecha.Text);
-                        command.Parameters.AddWithValue("@Hora", txtHora.Text);
-                        command.Parameters.AddWithValue("@idPaciente", idPaciente);
+                        connection.Open();
+                        int result = command.ExecuteNonQuery(); // Ejecutar el comando SQL
 
-                        try
+                        if (result > 0)
                         {
-                            connection.Open();
-                            int result = command.ExecuteNonQuery(); // Ejecutar el comando SQL
-
-                            if (result > 0)
-                            {
-                                MessageBox.Show("Datos modificados correctamente.");
-                                CargarDatos(); // Recargar los datos en el DataGridView
-                                LimpiarCampos(); // Limpiar los campos de texto
-                            }
-                            else
-                            {
-                                MessageBox.Show("No se pudieron modificar los datos.");
-                            }
+                            MessageBox.Show("Datos modificados correctamente.");
+                            CargarDatos(); // Recargar los datos en el DataGridView
+                            LimpiarCampos(); // Limpiar los campos de texto
                         }
-                        catch (MySqlException ex)
+                        else
                         {
-                            MessageBox.Show($"Error al modificar los datos: {ex.Message}");
+                            MessageBox.Show("No se pudieron modificar los datos.");
                         }
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show($"Error al modificar los datos: {ex.Message}");
                     }
                 }
             }
+        }
 
         private void btnEliminar_Click(object? sender, EventArgs e)
         {
@@ -343,44 +346,47 @@ namespace Consultorio
 
 
 
-                private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
-                {
-                    if (isLoading || e.RowIndex < 0 || dataGridView1.SelectedRows.Count == 0)
-                        return;
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (isLoading || e.RowIndex < 0 || dataGridView1.SelectedRows.Count == 0)
+                return;
 
-                    DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
-                    // Asignar los valores a los TextBox
-                    txtNombre.Text = row.Cells["Nombre"].Value?.ToString() ?? "";
-                    txtApellido.Text = row.Cells["Apellido"].Value?.ToString() ?? "";
-                    txtDNI.Text = row.Cells["DNI"].Value?.ToString() ?? "";
-                    txtTelefono.Text = row.Cells["Telefono"].Value?.ToString() ?? "";
-                    txtObraSocial.Text = row.Cells["Obra Social"].Value?.ToString() ?? "";
-                    txtMotivo.Text = row.Cells["Motivo Consulta"].Value?.ToString() ?? "";
-                    txtFecha.Text = row.Cells["Fecha"].Value?.ToString() ?? "";
-                    txtHora.Text = row.Cells["Hora"].Value?.ToString() ?? "";
+            // Asignar los valores a los TextBox
+            txtNombre.Text = row.Cells["Nombre"].Value?.ToString() ?? "";
+            txtApellido.Text = row.Cells["Apellido"].Value?.ToString() ?? "";
+            txtDNI.Text = row.Cells["DNI"].Value?.ToString() ?? "";
+            txtTelefono.Text = row.Cells["Telefono"].Value?.ToString() ?? "";
+            txtObraSocial.Text = row.Cells["Obra Social"].Value?.ToString() ?? "";
+            txtMotivo.Text = row.Cells["Motivo Consulta"].Value?.ToString() ?? "";
+            txtFecha.Text = row.Cells["Fecha"].Value?.ToString() ?? "";
+            txtHora.Text = row.Cells["Hora"].Value?.ToString() ?? "";
 
-                    // Asignar el valor de idPaciente
-                    idPaciente = int.Parse(row.Cells["idPaciente"].Value?.ToString() ?? "0");
-                }
-
-
-                // Filtrar los datos cuando cambie el texto en el TextBox
-                private void txtBuscar_TextChanged_1(object sender, EventArgs e)
-                {
-                    string filter = txtBuscar.Text.Trim(); // Capturamos el texto del TextBox
-                    DataView dv = new DataView(dataTable); // Usamos el dataTable global
-
-                    // Aplicamos el filtro para el DNI
-                    dv.RowFilter = string.Format("CONVERT(DNI, System.String) LIKE '%{0}%'", filter);
-
-                    // Asignamos el filtro al DataGridView
-                    dataGridView1.DataSource = dv;
-                }
-
-
-            }
+            // Asignar el valor de idPaciente
+            idPaciente = int.Parse(row.Cells["idPaciente"].Value?.ToString() ?? "0");
         }
+
+
+        // Filtrar los datos cuando cambie el texto en el TextBox
+        private void txtBuscar_TextChanged_1(object sender, EventArgs e)
+        {
+            string filter = txtBuscar.Text.Trim(); // Capturamos el texto del TextBox
+            DataView dv = new DataView(dataTable); // Usamos el dataTable global
+
+            // Aplicamos el filtro para el DNI
+            dv.RowFilter = string.Format("CONVERT(DNI, System.String) LIKE '%{0}%'", filter);
+
+            // Asignamos el filtro al DataGridView
+            dataGridView1.DataSource = dv;
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
     
          
 
