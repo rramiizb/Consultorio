@@ -1,0 +1,645 @@
+\doxysection{Referencia de la clase Consultorio.\+Form2}
+\hypertarget{class_consultorio_1_1_form2}{}\label{class_consultorio_1_1_form2}\index{Consultorio.Form2@{Consultorio.Form2}}
+Diagrama de herencia de Consultorio.\+Form2\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_consultorio_1_1_form2}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_consultorio_1_1_form2_a8cab3121da644a5bd68fe9e5c4b12d08}{Form2}} ()
+\item 
+void \mbox{\hyperlink{class_consultorio_1_1_form2_acc6a582326f9e8dc89bd97cb0bb8aa46}{Connect\+To\+Database}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_consultorio_1_1_form2_a1b9eb1814b8c9d5074d2428da940a42e}{Dispose}} (bool disposing)
+\begin{DoxyCompactList}\small\item\em Clean up any resources being used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos privados}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_consultorio_1_1_form2_acf85a6b23421ce6232d88c16d7412118}{Cargar\+Datos}} ()
+\item 
+void \mbox{\hyperlink{class_consultorio_1_1_form2_a227ee4954bfc0adec6c822744849786a}{Limpiar\+Campos}} ()
+\item 
+void \mbox{\hyperlink{class_consultorio_1_1_form2_a342aaf416a4ce11e47050740a9e4c7fe}{data\+Grid\+View1\+\_\+\+Cell\+Double\+Click}} (object sender, Data\+Grid\+View\+Cell\+Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_consultorio_1_1_form2_a584e4ebe84fff0c8c3ab327482b8a0da}{btn\+Agregar\+\_\+\+Click}} (object? sender, Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_consultorio_1_1_form2_a5d1c30aaf6e1dd2e4c76d2268f92bd61}{btn\+Modificar\+\_\+\+Click}} (object? sender, Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_consultorio_1_1_form2_a9673b17d694b29504f68826b211702ad}{btn\+Eliminar\+\_\+\+Click}} (object? sender, Event\+Args e)
+\item 
+void \mbox{\hyperlink{class_consultorio_1_1_form2_a2ba7b7ad63354aae99fcc26c99703b47}{data\+Grid\+View1\+\_\+\+Cell\+Click}} (object sender, Data\+Grid\+View\+Cell\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Evento que se activa al hacer clic en una celda del Data\+Grid\+View. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_consultorio_1_1_form2_ada64276cb1ecceb7f36121c0a6335099}{txt\+Buscar\+\_\+\+Text\+Changed\+\_\+1}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Filtra los datos del Data\+Grid\+View al cambiar el texto en el Text\+Box de búsqueda. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_consultorio_1_1_form2_a01aab86fbb61ed7eecbd828cfeeb147a}{Form2\+\_\+\+Double\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Evento que se activa al hacer doble clic en el formulario. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_consultorio_1_1_form2_aeec0f37d34f98f5d8f5be26e76ff1cdf}{Initialize\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Required method for Designer support -\/ do not modify the contents of this method with the code editor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_consultorio_1_1_form2_ab0f13a9cc9de81454587f1d1d101c46b}{connection\+String}} = "{}Server=127.\+0.\+0.\+1; Port=3306;Database=Pacientes;User Id=root;Password=45891023;"{}
+\item 
+int \mbox{\hyperlink{class_consultorio_1_1_form2_a826b2b307f50c6e7d692124e9b2a3733}{id\+Paciente}}
+\item 
+bool \mbox{\hyperlink{class_consultorio_1_1_form2_a3932e5c679d67a2dc7bbc455762dbb8c}{is\+Loading}} = true
+\item 
+Data\+Table \mbox{\hyperlink{class_consultorio_1_1_form2_ad4ea85a360d2b7c2a97d786059850e66}{data\+Table}} = new Data\+Table()
+\item 
+System.\+Component\+Model.\+IContainer \mbox{\hyperlink{class_consultorio_1_1_form2_a3b606a8405a160f1ce0862e9a063dbaf}{components}} = null
+\begin{DoxyCompactList}\small\item\em Required designer variable. \end{DoxyCompactList}\item 
+Label \mbox{\hyperlink{class_consultorio_1_1_form2_a61e20daf42050893d7b942c8664ab127}{label1}}
+\item 
+Text\+Box \mbox{\hyperlink{class_consultorio_1_1_form2_a09271e74d1df2d0bd5673f7df8143685}{txt\+Nombre}}
+\item 
+Text\+Box \mbox{\hyperlink{class_consultorio_1_1_form2_aba2775fac40ec270df881030e6f21b14}{txt\+Apellido}}
+\item 
+Label \mbox{\hyperlink{class_consultorio_1_1_form2_a1c110cb7a13b1426aa3fdc9f072ac69d}{Apellido}}
+\item 
+Text\+Box \mbox{\hyperlink{class_consultorio_1_1_form2_abf184685b90000110fd82cb513f8a28d}{txt\+Telefono}}
+\item 
+Label \mbox{\hyperlink{class_consultorio_1_1_form2_a8126bb3e1365dce9efc50ba237364769}{DNI}}
+\item 
+Text\+Box \mbox{\hyperlink{class_consultorio_1_1_form2_a227eba1ae56c936907af5efaf52382b2}{txt\+DNI}}
+\item 
+Label \mbox{\hyperlink{class_consultorio_1_1_form2_a06e6281dd1758553cd582c7337fb6e0f}{label4}}
+\item 
+Text\+Box \mbox{\hyperlink{class_consultorio_1_1_form2_a938c33a000e41741fb714b523a1c8656}{txt\+Obra\+Social}}
+\item 
+Label \mbox{\hyperlink{class_consultorio_1_1_form2_aa5d17a56cbf937ccbb05ce104398ee66}{label5}}
+\item 
+Text\+Box \mbox{\hyperlink{class_consultorio_1_1_form2_a06d56b0e189a507b5fa519f9dcf0ea7c}{txt\+Motivo}}
+\item 
+Label \mbox{\hyperlink{class_consultorio_1_1_form2_a085a3eb39aecf69c7860aac62f416141}{label6}}
+\item 
+Text\+Box \mbox{\hyperlink{class_consultorio_1_1_form2_a3e39db78a23877e8ed9135dbe590992b}{txt\+Fecha}}
+\item 
+Label \mbox{\hyperlink{class_consultorio_1_1_form2_a7a62ce413c3835d1927a83e234476ca4}{label7}}
+\item 
+Text\+Box \mbox{\hyperlink{class_consultorio_1_1_form2_a18cabac6849d8a1cd0f0ce142a08cf24}{txt\+Hora}}
+\item 
+Label \mbox{\hyperlink{class_consultorio_1_1_form2_a11d4d9a4890c093b2de1b94af90db561}{label8}}
+\item 
+Month\+Calendar \mbox{\hyperlink{class_consultorio_1_1_form2_a25d800f26805858a81bc174f0df46a60}{month\+Calendar1}}
+\item 
+Data\+Grid\+View \mbox{\hyperlink{class_consultorio_1_1_form2_ae053bc1707b12d8f50d0c54a48267d2b}{data\+Grid\+View1}}
+\item 
+Text\+Box \mbox{\hyperlink{class_consultorio_1_1_form2_a33a9ed6af6f31305ba14606da18f07cc}{txt\+Buscador}}
+\item 
+Label \mbox{\hyperlink{class_consultorio_1_1_form2_a1eeb4ec68beccec9117a5ecb11847844}{label9}}
+\item 
+Button \mbox{\hyperlink{class_consultorio_1_1_form2_a0a9cd3310fade666af2c935703e8b1bb}{btn\+Agregar}}
+\item 
+Button \mbox{\hyperlink{class_consultorio_1_1_form2_a10ffabd1a1ef24075ab124a9b6276a5c}{btn\+Modificar}}
+\item 
+Button \mbox{\hyperlink{class_consultorio_1_1_form2_a456fd1955fac04e927ee9f9bf33318d9}{btn\+Eliminar}}
+\item 
+Text\+Box \mbox{\hyperlink{class_consultorio_1_1_form2_a4e3b77fbcc3dd52e4f315f16c5d0d058}{txt\+Buscar}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase \doxylink{class_consultorio_1_1_form2}{Form2} que hereda de Form. Esta clase es responsable de manejar la interfaz de usuario para la gestión de turnos en el consultorio.
+
+Variables\+:
+\begin{DoxyItemize}
+\item connection\+String\+: Cadena de conexión para la base de datos.
+\item id\+Paciente\+: Variable entera que almacena el ID del paciente seleccionado para operaciones de modificación y eliminación.
+\item is\+Loading\+: Bandera booleana que indica si los datos están siendo cargados en el Data\+Grid\+View para prevenir eventos no deseados durante la carga. 
+\end{DoxyItemize}
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00003}{3}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+
+
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{class_consultorio_1_1_form2_a8cab3121da644a5bd68fe9e5c4b12d08}\index{Consultorio.Form2@{Consultorio.Form2}!Form2@{Form2}}
+\index{Form2@{Form2}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{Form2()}{Form2()}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a8cab3121da644a5bd68fe9e5c4b12d08} 
+Consultorio.\+Form2.\+Form2 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Constructor de la clase \doxylink{class_consultorio_1_1_form2}{Form2}. Inicializa los componentes del formulario, establece la conexión a la base de datos, limpia los campos de entrada y carga los datos en el Data\+Grid\+View sin activar el evento Row\+Enter. Además, vincula los eventos de clic de los botones para agregar, modificar y eliminar turnos. 
+
+Definición en la línea \mbox{\hyperlink{_form2_8cs_source_l00047}{47}} del archivo \mbox{\hyperlink{_form2_8cs_source}{Form2.\+cs}}.
+
+
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_consultorio_1_1_form2_a584e4ebe84fff0c8c3ab327482b8a0da}\index{Consultorio.Form2@{Consultorio.Form2}!btnAgregar\_Click@{btnAgregar\_Click}}
+\index{btnAgregar\_Click@{btnAgregar\_Click}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{btnAgregar\_Click()}{btnAgregar\_Click()}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a584e4ebe84fff0c8c3ab327482b8a0da} 
+void Consultorio.\+Form2.\+btn\+Agregar\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object?}]{sender}{, }\item[{Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Método que se ejecuta al hacer clic en el botón Agregar. Valida los datos ingresados y los inserta en la base de datos.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sender} & El objeto que envía el evento. \\
+\hline
+{\em e} & Los argumentos del evento. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8cs_source_l00193}{193}} del archivo \mbox{\hyperlink{_form2_8cs_source}{Form2.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a9673b17d694b29504f68826b211702ad}\index{Consultorio.Form2@{Consultorio.Form2}!btnEliminar\_Click@{btnEliminar\_Click}}
+\index{btnEliminar\_Click@{btnEliminar\_Click}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{btnEliminar\_Click()}{btnEliminar\_Click()}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a9673b17d694b29504f68826b211702ad} 
+void Consultorio.\+Form2.\+btn\+Eliminar\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object?}]{sender}{, }\item[{Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Método que se ejecuta al hacer clic en el botón Eliminar. Verifica si se ha seleccionado un turno y lo elimina de la base de datos.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sender} & El objeto que envía el evento. \\
+\hline
+{\em e} & Los argumentos del evento. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8cs_source_l00434}{434}} del archivo \mbox{\hyperlink{_form2_8cs_source}{Form2.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a5d1c30aaf6e1dd2e4c76d2268f92bd61}\index{Consultorio.Form2@{Consultorio.Form2}!btnModificar\_Click@{btnModificar\_Click}}
+\index{btnModificar\_Click@{btnModificar\_Click}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{btnModificar\_Click()}{btnModificar\_Click()}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a5d1c30aaf6e1dd2e4c76d2268f92bd61} 
+void Consultorio.\+Form2.\+btn\+Modificar\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object?}]{sender}{, }\item[{Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Método que se ejecuta al hacer clic en el botón Modificar. Valida los datos ingresados, verifica si ya existe un turno con la misma fecha y hora, y actualiza los datos en la base de datos.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sender} & El objeto que envía el evento. \\
+\hline
+{\em e} & Los argumentos del evento. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8cs_source_l00317}{317}} del archivo \mbox{\hyperlink{_form2_8cs_source}{Form2.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_acf85a6b23421ce6232d88c16d7412118}\index{Consultorio.Form2@{Consultorio.Form2}!CargarDatos@{CargarDatos}}
+\index{CargarDatos@{CargarDatos}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{CargarDatos()}{CargarDatos()}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_acf85a6b23421ce6232d88c16d7412118} 
+void Consultorio.\+Form2.\+Cargar\+Datos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Método que carga los datos de la tabla \textquotesingle{}Turnos\textquotesingle{} en el Data\+Grid\+View. Este método realiza una consulta SQL para obtener todos los turnos, ordenándolos por fecha y hora. Luego, asigna los datos a un Data\+Table y lo establece como fuente de datos para el Data\+Grid\+View. 
+
+Definición en la línea \mbox{\hyperlink{_form2_8cs_source_l00102}{102}} del archivo \mbox{\hyperlink{_form2_8cs_source}{Form2.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_acc6a582326f9e8dc89bd97cb0bb8aa46}\index{Consultorio.Form2@{Consultorio.Form2}!ConnectToDatabase@{ConnectToDatabase}}
+\index{ConnectToDatabase@{ConnectToDatabase}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{ConnectToDatabase()}{ConnectToDatabase()}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_acc6a582326f9e8dc89bd97cb0bb8aa46} 
+void Consultorio.\+Form2.\+Connect\+To\+Database (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Establece una conexión con la base de datos My\+SQL utilizando la cadena de conexión especificada. Si la conexión es exitosa, se muestra un mensaje indicando que la conexión fue exitosa. En caso de error, se captura la excepción y se muestra un mensaje con el error. 
+
+Definición en la línea \mbox{\hyperlink{_form2_8cs_source_l00069}{69}} del archivo \mbox{\hyperlink{_form2_8cs_source}{Form2.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a2ba7b7ad63354aae99fcc26c99703b47}\index{Consultorio.Form2@{Consultorio.Form2}!dataGridView1\_CellClick@{dataGridView1\_CellClick}}
+\index{dataGridView1\_CellClick@{dataGridView1\_CellClick}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{dataGridView1\_CellClick()}{dataGridView1\_CellClick()}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a2ba7b7ad63354aae99fcc26c99703b47} 
+void Consultorio.\+Form2.\+data\+Grid\+View1\+\_\+\+Cell\+Click (\begin{DoxyParamCaption}\item[{object}]{sender}{, }\item[{Data\+Grid\+View\+Cell\+Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Evento que se activa al hacer clic en una celda del Data\+Grid\+View. 
+
+Este método asigna los valores de la fila seleccionada a los Text\+Box correspondientes y almacena el id\+Paciente para operaciones posteriores.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sender} & El objeto que genera el evento. \\
+\hline
+{\em e} & Contiene los datos del evento. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8cs_source_l00491}{491}} del archivo \mbox{\hyperlink{_form2_8cs_source}{Form2.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a342aaf416a4ce11e47050740a9e4c7fe}\index{Consultorio.Form2@{Consultorio.Form2}!dataGridView1\_CellDoubleClick@{dataGridView1\_CellDoubleClick}}
+\index{dataGridView1\_CellDoubleClick@{dataGridView1\_CellDoubleClick}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{dataGridView1\_CellDoubleClick()}{dataGridView1\_CellDoubleClick()}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a342aaf416a4ce11e47050740a9e4c7fe} 
+void Consultorio.\+Form2.\+data\+Grid\+View1\+\_\+\+Cell\+Double\+Click (\begin{DoxyParamCaption}\item[{object}]{sender}{, }\item[{Data\+Grid\+View\+Cell\+Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Método que se ejecuta al hacer doble clic en una celda del Data\+Grid\+View. Asigna los valores de la fila seleccionada a los Text\+Box correspondientes.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sender} & El objeto que envía el evento. \\
+\hline
+{\em e} & Los argumentos del evento que contienen información sobre la celda. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8cs_source_l00165}{165}} del archivo \mbox{\hyperlink{_form2_8cs_source}{Form2.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a1b9eb1814b8c9d5074d2428da940a42e}\index{Consultorio.Form2@{Consultorio.Form2}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a1b9eb1814b8c9d5074d2428da940a42e} 
+override void Consultorio.\+Form2.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Clean up any resources being used. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em disposing} & true if managed resources should be disposed; otherwise, false.\\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00014}{14}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a01aab86fbb61ed7eecbd828cfeeb147a}\index{Consultorio.Form2@{Consultorio.Form2}!Form2\_DoubleClick@{Form2\_DoubleClick}}
+\index{Form2\_DoubleClick@{Form2\_DoubleClick}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{Form2\_DoubleClick()}{Form2\_DoubleClick()}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a01aab86fbb61ed7eecbd828cfeeb147a} 
+void Consultorio.\+Form2.\+Form2\+\_\+\+Double\+Click (\begin{DoxyParamCaption}\item[{object}]{sender}{, }\item[{Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Evento que se activa al hacer doble clic en el formulario. 
+
+Este método muestra un cuadro de diálogo de confirmación para limpiar los campos. Si el usuario confirma, se limpian los campos y se deselecciona cualquier fila en el Data\+Grid\+View.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sender} & El objeto que genera el evento. \\
+\hline
+{\em e} & Contiene los datos del evento. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8cs_source_l00544}{544}} del archivo \mbox{\hyperlink{_form2_8cs_source}{Form2.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_aeec0f37d34f98f5d8f5be26e76ff1cdf}\index{Consultorio.Form2@{Consultorio.Form2}!InitializeComponent@{InitializeComponent}}
+\index{InitializeComponent@{InitializeComponent}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{InitializeComponent()}{InitializeComponent()}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_aeec0f37d34f98f5d8f5be26e76ff1cdf} 
+void Consultorio.\+Form2.\+Initialize\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Required method for Designer support -\/ do not modify the contents of this method with the code editor. 
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00029}{29}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a227ee4954bfc0adec6c822744849786a}\index{Consultorio.Form2@{Consultorio.Form2}!LimpiarCampos@{LimpiarCampos}}
+\index{LimpiarCampos@{LimpiarCampos}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{LimpiarCampos()}{LimpiarCampos()}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a227ee4954bfc0adec6c822744849786a} 
+void Consultorio.\+Form2.\+Limpiar\+Campos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Método que limpia los campos de texto en el formulario. Este método se utiliza para restablecer los valores de los Text\+Box después de agregar, modificar o eliminar un turno. 
+
+Definición en la línea \mbox{\hyperlink{_form2_8cs_source_l00146}{146}} del archivo \mbox{\hyperlink{_form2_8cs_source}{Form2.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_ada64276cb1ecceb7f36121c0a6335099}\index{Consultorio.Form2@{Consultorio.Form2}!txtBuscar\_TextChanged\_1@{txtBuscar\_TextChanged\_1}}
+\index{txtBuscar\_TextChanged\_1@{txtBuscar\_TextChanged\_1}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{txtBuscar\_TextChanged\_1()}{txtBuscar\_TextChanged\_1()}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_ada64276cb1ecceb7f36121c0a6335099} 
+void Consultorio.\+Form2.\+txt\+Buscar\+\_\+\+Text\+Changed\+\_\+1 (\begin{DoxyParamCaption}\item[{object}]{sender}{, }\item[{Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Filtra los datos del Data\+Grid\+View al cambiar el texto en el Text\+Box de búsqueda. 
+
+Este método aplica un filtro basado en el texto ingresado en el Text\+Box, permitiendo una búsqueda rápida por DNI.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sender} & El objeto que genera el evento. \\
+\hline
+{\em e} & Contiene los datos del evento. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8cs_source_l00522}{522}} del archivo \mbox{\hyperlink{_form2_8cs_source}{Form2.\+cs}}.
+
+
+
+\doxysubsection{Documentación de campos}
+\Hypertarget{class_consultorio_1_1_form2_a1c110cb7a13b1426aa3fdc9f072ac69d}\index{Consultorio.Form2@{Consultorio.Form2}!Apellido@{Apellido}}
+\index{Apellido@{Apellido}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{Apellido}{Apellido}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a1c110cb7a13b1426aa3fdc9f072ac69d} 
+Label Consultorio.\+Form2.\+Apellido\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00317}{317}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a0a9cd3310fade666af2c935703e8b1bb}\index{Consultorio.Form2@{Consultorio.Form2}!btnAgregar@{btnAgregar}}
+\index{btnAgregar@{btnAgregar}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{btnAgregar}{btnAgregar}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a0a9cd3310fade666af2c935703e8b1bb} 
+Button Consultorio.\+Form2.\+btn\+Agregar\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00334}{334}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a456fd1955fac04e927ee9f9bf33318d9}\index{Consultorio.Form2@{Consultorio.Form2}!btnEliminar@{btnEliminar}}
+\index{btnEliminar@{btnEliminar}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{btnEliminar}{btnEliminar}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a456fd1955fac04e927ee9f9bf33318d9} 
+Button Consultorio.\+Form2.\+btn\+Eliminar\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00336}{336}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a10ffabd1a1ef24075ab124a9b6276a5c}\index{Consultorio.Form2@{Consultorio.Form2}!btnModificar@{btnModificar}}
+\index{btnModificar@{btnModificar}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{btnModificar}{btnModificar}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a10ffabd1a1ef24075ab124a9b6276a5c} 
+Button Consultorio.\+Form2.\+btn\+Modificar\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00335}{335}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a3b606a8405a160f1ce0862e9a063dbaf}\index{Consultorio.Form2@{Consultorio.Form2}!components@{components}}
+\index{components@{components}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{components}{components}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a3b606a8405a160f1ce0862e9a063dbaf} 
+System.\+Component\+Model.\+IContainer Consultorio.\+Form2.\+components = null\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Required designer variable. 
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00008}{8}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_ab0f13a9cc9de81454587f1d1d101c46b}\index{Consultorio.Form2@{Consultorio.Form2}!connectionString@{connectionString}}
+\index{connectionString@{connectionString}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{connectionString}{connectionString}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_ab0f13a9cc9de81454587f1d1d101c46b} 
+string Consultorio.\+Form2.\+connection\+String = "{}Server=127.\+0.\+0.\+1; Port=3306;Database=Pacientes;User Id=root;Password=45891023;"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8cs_source_l00031}{31}} del archivo \mbox{\hyperlink{_form2_8cs_source}{Form2.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_ae053bc1707b12d8f50d0c54a48267d2b}\index{Consultorio.Form2@{Consultorio.Form2}!dataGridView1@{dataGridView1}}
+\index{dataGridView1@{dataGridView1}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{dataGridView1}{dataGridView1}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_ae053bc1707b12d8f50d0c54a48267d2b} 
+Data\+Grid\+View Consultorio.\+Form2.\+data\+Grid\+View1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00331}{331}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_ad4ea85a360d2b7c2a97d786059850e66}\index{Consultorio.Form2@{Consultorio.Form2}!dataTable@{dataTable}}
+\index{dataTable@{dataTable}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{dataTable}{dataTable}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_ad4ea85a360d2b7c2a97d786059850e66} 
+Data\+Table Consultorio.\+Form2.\+data\+Table = new Data\+Table()\hspace{0.3cm}{\ttfamily [private]}}
+
+Declarar una variable de clase para almacenar los datos de los turnos en un Data\+Table. Este Data\+Table se utilizará para llenar el Data\+Grid\+View y gestionar los registros de la base de datos. 
+
+Definición en la línea \mbox{\hyperlink{_form2_8cs_source_l00094}{94}} del archivo \mbox{\hyperlink{_form2_8cs_source}{Form2.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a8126bb3e1365dce9efc50ba237364769}\index{Consultorio.Form2@{Consultorio.Form2}!DNI@{DNI}}
+\index{DNI@{DNI}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{DNI}{DNI}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a8126bb3e1365dce9efc50ba237364769} 
+Label Consultorio.\+Form2.\+DNI\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00319}{319}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a826b2b307f50c6e7d692124e9b2a3733}\index{Consultorio.Form2@{Consultorio.Form2}!idPaciente@{idPaciente}}
+\index{idPaciente@{idPaciente}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{idPaciente}{idPaciente}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a826b2b307f50c6e7d692124e9b2a3733} 
+int Consultorio.\+Form2.\+id\+Paciente\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8cs_source_l00034}{34}} del archivo \mbox{\hyperlink{_form2_8cs_source}{Form2.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a3932e5c679d67a2dc7bbc455762dbb8c}\index{Consultorio.Form2@{Consultorio.Form2}!isLoading@{isLoading}}
+\index{isLoading@{isLoading}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{isLoading}{isLoading}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a3932e5c679d67a2dc7bbc455762dbb8c} 
+bool Consultorio.\+Form2.\+is\+Loading = true\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8cs_source_l00036}{36}} del archivo \mbox{\hyperlink{_form2_8cs_source}{Form2.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a61e20daf42050893d7b942c8664ab127}\index{Consultorio.Form2@{Consultorio.Form2}!label1@{label1}}
+\index{label1@{label1}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{label1}{label1}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a61e20daf42050893d7b942c8664ab127} 
+Label Consultorio.\+Form2.\+label1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00314}{314}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a06e6281dd1758553cd582c7337fb6e0f}\index{Consultorio.Form2@{Consultorio.Form2}!label4@{label4}}
+\index{label4@{label4}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{label4}{label4}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a06e6281dd1758553cd582c7337fb6e0f} 
+Label Consultorio.\+Form2.\+label4\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00321}{321}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_aa5d17a56cbf937ccbb05ce104398ee66}\index{Consultorio.Form2@{Consultorio.Form2}!label5@{label5}}
+\index{label5@{label5}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{label5}{label5}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_aa5d17a56cbf937ccbb05ce104398ee66} 
+Label Consultorio.\+Form2.\+label5\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00323}{323}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a085a3eb39aecf69c7860aac62f416141}\index{Consultorio.Form2@{Consultorio.Form2}!label6@{label6}}
+\index{label6@{label6}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{label6}{label6}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a085a3eb39aecf69c7860aac62f416141} 
+Label Consultorio.\+Form2.\+label6\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00325}{325}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a7a62ce413c3835d1927a83e234476ca4}\index{Consultorio.Form2@{Consultorio.Form2}!label7@{label7}}
+\index{label7@{label7}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{label7}{label7}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a7a62ce413c3835d1927a83e234476ca4} 
+Label Consultorio.\+Form2.\+label7\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00327}{327}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a11d4d9a4890c093b2de1b94af90db561}\index{Consultorio.Form2@{Consultorio.Form2}!label8@{label8}}
+\index{label8@{label8}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{label8}{label8}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a11d4d9a4890c093b2de1b94af90db561} 
+Label Consultorio.\+Form2.\+label8\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00329}{329}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a1eeb4ec68beccec9117a5ecb11847844}\index{Consultorio.Form2@{Consultorio.Form2}!label9@{label9}}
+\index{label9@{label9}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{label9}{label9}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a1eeb4ec68beccec9117a5ecb11847844} 
+Label Consultorio.\+Form2.\+label9\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00333}{333}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a25d800f26805858a81bc174f0df46a60}\index{Consultorio.Form2@{Consultorio.Form2}!monthCalendar1@{monthCalendar1}}
+\index{monthCalendar1@{monthCalendar1}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{monthCalendar1}{monthCalendar1}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a25d800f26805858a81bc174f0df46a60} 
+Month\+Calendar Consultorio.\+Form2.\+month\+Calendar1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00330}{330}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_aba2775fac40ec270df881030e6f21b14}\index{Consultorio.Form2@{Consultorio.Form2}!txtApellido@{txtApellido}}
+\index{txtApellido@{txtApellido}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{txtApellido}{txtApellido}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_aba2775fac40ec270df881030e6f21b14} 
+Text\+Box Consultorio.\+Form2.\+txt\+Apellido\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00316}{316}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a33a9ed6af6f31305ba14606da18f07cc}\index{Consultorio.Form2@{Consultorio.Form2}!txtBuscador@{txtBuscador}}
+\index{txtBuscador@{txtBuscador}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{txtBuscador}{txtBuscador}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a33a9ed6af6f31305ba14606da18f07cc} 
+Text\+Box Consultorio.\+Form2.\+txt\+Buscador\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00332}{332}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a4e3b77fbcc3dd52e4f315f16c5d0d058}\index{Consultorio.Form2@{Consultorio.Form2}!txtBuscar@{txtBuscar}}
+\index{txtBuscar@{txtBuscar}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{txtBuscar}{txtBuscar}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a4e3b77fbcc3dd52e4f315f16c5d0d058} 
+Text\+Box Consultorio.\+Form2.\+txt\+Buscar\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00337}{337}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a227eba1ae56c936907af5efaf52382b2}\index{Consultorio.Form2@{Consultorio.Form2}!txtDNI@{txtDNI}}
+\index{txtDNI@{txtDNI}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{txtDNI}{txtDNI}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a227eba1ae56c936907af5efaf52382b2} 
+Text\+Box Consultorio.\+Form2.\+txt\+DNI\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00320}{320}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a3e39db78a23877e8ed9135dbe590992b}\index{Consultorio.Form2@{Consultorio.Form2}!txtFecha@{txtFecha}}
+\index{txtFecha@{txtFecha}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{txtFecha}{txtFecha}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a3e39db78a23877e8ed9135dbe590992b} 
+Text\+Box Consultorio.\+Form2.\+txt\+Fecha\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00326}{326}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a18cabac6849d8a1cd0f0ce142a08cf24}\index{Consultorio.Form2@{Consultorio.Form2}!txtHora@{txtHora}}
+\index{txtHora@{txtHora}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{txtHora}{txtHora}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a18cabac6849d8a1cd0f0ce142a08cf24} 
+Text\+Box Consultorio.\+Form2.\+txt\+Hora\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00328}{328}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a06d56b0e189a507b5fa519f9dcf0ea7c}\index{Consultorio.Form2@{Consultorio.Form2}!txtMotivo@{txtMotivo}}
+\index{txtMotivo@{txtMotivo}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{txtMotivo}{txtMotivo}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a06d56b0e189a507b5fa519f9dcf0ea7c} 
+Text\+Box Consultorio.\+Form2.\+txt\+Motivo\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00324}{324}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a09271e74d1df2d0bd5673f7df8143685}\index{Consultorio.Form2@{Consultorio.Form2}!txtNombre@{txtNombre}}
+\index{txtNombre@{txtNombre}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{txtNombre}{txtNombre}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a09271e74d1df2d0bd5673f7df8143685} 
+Text\+Box Consultorio.\+Form2.\+txt\+Nombre\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00315}{315}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_a938c33a000e41741fb714b523a1c8656}\index{Consultorio.Form2@{Consultorio.Form2}!txtObraSocial@{txtObraSocial}}
+\index{txtObraSocial@{txtObraSocial}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{txtObraSocial}{txtObraSocial}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_a938c33a000e41741fb714b523a1c8656} 
+Text\+Box Consultorio.\+Form2.\+txt\+Obra\+Social\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00322}{322}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+\Hypertarget{class_consultorio_1_1_form2_abf184685b90000110fd82cb513f8a28d}\index{Consultorio.Form2@{Consultorio.Form2}!txtTelefono@{txtTelefono}}
+\index{txtTelefono@{txtTelefono}!Consultorio.Form2@{Consultorio.Form2}}
+\doxysubsubsection{\texorpdfstring{txtTelefono}{txtTelefono}}
+{\footnotesize\ttfamily \label{class_consultorio_1_1_form2_abf184685b90000110fd82cb513f8a28d} 
+Text\+Box Consultorio.\+Form2.\+txt\+Telefono\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea \mbox{\hyperlink{_form2_8_designer_8cs_source_l00318}{318}} del archivo \mbox{\hyperlink{_form2_8_designer_8cs_source}{Form2.\+Designer.\+cs}}.
+
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ramir/\+One\+Drive/\+Escritorio/\+Consultorio/\+Consultorio/\mbox{\hyperlink{_form2_8cs}{Form2.\+cs}}\item 
+C\+:/\+Users/ramir/\+One\+Drive/\+Escritorio/\+Consultorio/\+Consultorio/\mbox{\hyperlink{_form2_8_designer_8cs}{Form2.\+Designer.\+cs}}\end{DoxyCompactItemize}

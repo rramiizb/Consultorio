@@ -38,6 +38,7 @@
             // 
             // btnAcceder
             // 
+            btnAcceder.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAcceder.Location = new Point(435, 267);
             btnAcceder.Name = "btnAcceder";
             btnAcceder.Size = new Size(173, 32);
@@ -49,13 +50,14 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = SystemColors.GradientActiveCaption;
             label1.Font = new Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(380, 36);
+            label1.Location = new Point(357, 36);
             label1.Name = "label1";
-            label1.Size = new Size(272, 40);
+            label1.Size = new Size(341, 40);
             label1.TabIndex = 1;
-            label1.Text = "Consultorio Amado";
-            label1.Click += label1_Click;
+            label1.Text = "\"Consultorio Dr. Amado\"";
+            
             // 
             // txtContraseña
             // 
@@ -77,20 +79,21 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(393, 214);
+            label2.FlatStyle = FlatStyle.Popup;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(381, 205);
             label2.Name = "label2";
-            label2.Size = new Size(269, 21);
+            label2.Size = new Size(287, 21);
             label2.TabIndex = 4;
-            label2.Text = "Para Registrar turnos Ingrese la Clave";
+            label2.Text = "Para registrar turnos ingrese la clave";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = Color.Turquoise;
             BackgroundImageLayout = ImageLayout.Center;
-            ClientSize = new Size(1025, 450);
+            ClientSize = new Size(1012, 450);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
             Controls.Add(txtContraseña);
