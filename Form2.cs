@@ -167,7 +167,7 @@ namespace Consultorio
             if (e.RowIndex >= 0) // Verifica que no sea el encabezado
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-
+        
                 // Asignar los valores a los TextBox
                 txtNombre.Text = row.Cells["Nombre"].Value?.ToString() ?? "";
                 txtApellido.Text = row.Cells["Apellido"].Value?.ToString() ?? "";
@@ -177,9 +177,17 @@ namespace Consultorio
                 txtMotivo.Text = row.Cells["Motivo Consulta"].Value?.ToString() ?? "";
                 txtFecha.Text = row.Cells["Fecha"].Value?.ToString() ?? "";
                 txtHora.Text = row.Cells["Hora"].Value?.ToString() ?? "";
-
-                // Asignar el valor de idPaciente
-                idPaciente = int.Parse(row.Cells["idPaciente"].Value?.ToString() ?? "0");
+        
+                // Asignar el valor de idPaciente con manejo de excepciones
+                try
+                {
+                    idPaciente = int.Parse(row.Cells["idPaciente"].Value?.ToString() ?? "0");
+                }
+                catch (FormatException ex)
+                {
+                    MessageBox.Show("El formato del ID del paciente no es válido. " + ex.Message);
+                    idPaciente = 0; // Establecer un valor predeterminado o tomar otra acción
+                }
             }
         }
 
@@ -234,12 +242,12 @@ namespace Consultorio
                 return;
             }
 
-            // Validar si el DNI y el Teléfono son numéricos
-            if (!int.TryParse(txtDNI.Text, out _) || !int.TryParse(txtTelefono.Text, out _))
-            {
-                MessageBox.Show("El DNI y el Teléfono deben ser números válidos.");
-                return;
-            }
+             //Validar que el DNI tenga 8 digitos, y el telefono 10, ademas que sean numericos 
+             if (txtDNI.Text.Length != 8 || !int.TryParse(txtDNI.Text, out _) || txtTelefono.Text.Length != 10 || !int.TryParse(txtTelefono.Text, out _))
+             {
+                 MessageBox.Show("El DNI debe tener exactamente 8 dígitos y el Teléfono debe tener exactamente 10 dígitos, ambos numéricos.");
+                 return;
+             }
 
             // Verificar si ya existe un turno con la misma fecha y hora
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -344,12 +352,12 @@ namespace Consultorio
                 return;
             }
 
-            // Validar si el DNI y el Teléfono son numéricos
-            if (!int.TryParse(txtDNI.Text, out _) || !int.TryParse(txtTelefono.Text, out _))
+            //Validar que el DNI tenga 8 digitos, y el telefono 10, ademas que sean numericos 
+            if (txtDNI.Text.Length != 8 || !int.TryParse(txtDNI.Text, out _) || txtTelefono.Text.Length != 10 || !int.TryParse(txtTelefono.Text, out _))
             {
-                MessageBox.Show("El DNI y el Teléfono deben ser números válidos.");
+                MessageBox.Show("El DNI debe tener exactamente 8 dígitos y el Teléfono debe tener exactamente 10 dígitos, ambos numéricos.");
                 return;
-            }
+             }
 
             // Verificar si ya existe un turno con la misma fecha y hora
             using (MySqlConnection connection = new MySqlConnection(connectionString))
