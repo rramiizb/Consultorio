@@ -201,7 +201,7 @@
             // 
             // monthCalendar1
             // 
-            monthCalendar1.Location = new Point(811, 93);
+            monthCalendar1.Location = new Point(710, 93);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 16;
             // 
