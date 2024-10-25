@@ -28,7 +28,7 @@ namespace Consultorio
  */
     public partial class Form2 : Form
     {
-        private string connectionString = "Server=127.0.0.1; Port=3306;Database=Pacientes;User Id=root;Password=45891023;";
+        private string connectionString = "Server=127.0.0.1; Port=3306;Database=Pacientes;User Id=root;Password=ContraseñaBaseDeDatos;";
 
         // Declarar la variable idPaciente de tipo int
         private int idPaciente;
@@ -68,7 +68,7 @@ namespace Consultorio
   */
         public void ConnectToDatabase()
         {
-            string connectionString = "Server=127.0.0.1; Port=3306;Database=Pacientes;User Id=root;Password=45891023;";
+            string connectionString = "Server=127.0.0.1; Port=3306;Database=Pacientes;User Id=root;Password=ContraseñaBaseDeDatos;";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
