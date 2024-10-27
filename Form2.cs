@@ -241,13 +241,67 @@ namespace Consultorio
                 MessageBox.Show("La hora debe estar entre las 09:00 y las 20:00.");
                 return;
             }
-
-             //Validar que el DNI tenga 8 digitos, y el telefono 10, ademas que sean numericos 
-             if (txtDNI.Text.Length != 8 || !int.TryParse(txtDNI.Text, out _) || txtTelefono.Text.Length != 10 || !int.TryParse(txtTelefono.Text, out _))
-             {
-                 MessageBox.Show("El DNI debe tener exactamente 8 dígitos y el Teléfono debe tener exactamente 10 dígitos, ambos numéricos.");
-                 return;
-             }
+            // Verificar si ya existe un paciente con el mismo DNI
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                string queryCheckDNI = "SELECT COUNT(*) FROM Turnos WHERE DNI = @DNI";
+                using (MySqlCommand commandCheckDNI = new MySqlCommand(queryCheckDNI, connection))
+                {
+                    commandCheckDNI.Parameters.AddWithValue("@DNI", txtDNI.Text);
+            
+                    try
+                    {
+                        connection.Open();
+                        int countDNI = Convert.ToInt32(commandCheckDNI.ExecuteScalar());
+            
+                        if (countDNI > 0)
+                        {
+                            MessageBox.Show("Ya existe un paciente con el mismo DNI.");
+                            return;
+                        }
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show($"Error al verificar el DNI: {ex.Message}");
+                        return;
+                    }
+                }
+            }
+            
+            // Verificar si ya existe un paciente con el mismo Teléfono
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                string queryCheckTelefono = "SELECT COUNT(*) FROM Turnos WHERE Telefono = @Telefono";
+                using (MySqlCommand commandCheckTelefono = new MySqlCommand(queryCheckTelefono, connection))
+                {
+                    commandCheckTelefono.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
+            
+                    try
+                    {
+                        connection.Open();
+                        int countTelefono = Convert.ToInt32(commandCheckTelefono.ExecuteScalar());
+            
+                        if (countTelefono > 0)
+                        {
+                            MessageBox.Show("Ya existe un paciente con el mismo Teléfono.");
+                            return;
+                        }
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show($"Error al verificar el Teléfono: {ex.Message}");
+                        return;
+                    }
+                }
+            }
+            // Validar que el DNI tenga 8 dígitos, y el teléfono 10, además que sean numéricos 
+            string telefonoTexto = txtTelefono.Text.Trim();
+            if (txtDNI.Text.Length != 8 || !long.TryParse(txtDNI.Text, out _) ||
+                telefonoTexto.Length != 10 || !long.TryParse(telefonoTexto, out _))
+            {
+                MessageBox.Show("El DNI debe tener exactamente 8 dígitos y el Teléfono debe tener exactamente 10 dígitos, ambos numéricos.");
+                return;
+            }
 
             // Verificar si ya existe un turno con la misma fecha y hora
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -351,13 +405,42 @@ namespace Consultorio
                 MessageBox.Show("La hora debe estar entre las 09:00 y las 20:00.");
                 return;
             }
-
-            //Validar que el DNI tenga 8 digitos, y el telefono 10, ademas que sean numericos 
-            if (txtDNI.Text.Length != 8 || !int.TryParse(txtDNI.Text, out _) || txtTelefono.Text.Length != 10 || !int.TryParse(txtTelefono.Text, out _))
+            // Verificar si ya existe un paciente con el mismo DNI o teléfono
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                string queryCheckDniTelefono = "SELECT COUNT(*) FROM Turnos WHERE (DNI = @Dni OR Telefono = @Telefono) AND idPaciente != @idPaciente";
+                using (MySqlCommand commandCheckDniTelefono = new MySqlCommand(queryCheckDniTelefono, connection))
+                {
+                    commandCheckDniTelefono.Parameters.AddWithValue("@Dni", txtDNI.Text);
+                    commandCheckDniTelefono.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
+                    commandCheckDniTelefono.Parameters.AddWithValue("@idPaciente", idPaciente);
+            
+                    try
+                    {
+                        connection.Open();
+                        int countDniTelefono = Convert.ToInt32(commandCheckDniTelefono.ExecuteScalar());
+            
+                        if (countDniTelefono > 0)
+                        {
+                            MessageBox.Show("Ya existe un paciente con el mismo DNI o Teléfono.");
+                            return;
+                        }
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show($"Error al verificar DNI y Teléfono duplicados: {ex.Message}");
+                        return;
+                    }
+                }
+            }
+            // Validar que el DNI tenga 8 dígitos, y el teléfono 10, además que sean numéricos 
+            string telefonoTexto = txtTelefono.Text.Trim();
+            if (txtDNI.Text.Length != 8 || !long.TryParse(txtDNI.Text, out _) ||
+                telefonoTexto.Length != 10 || !long.TryParse(telefonoTexto, out _))
             {
                 MessageBox.Show("El DNI debe tener exactamente 8 dígitos y el Teléfono debe tener exactamente 10 dígitos, ambos numéricos.");
                 return;
-             }
+            }
 
             // Verificar si ya existe un turno con la misma fecha y hora
             using (MySqlConnection connection = new MySqlConnection(connectionString))
